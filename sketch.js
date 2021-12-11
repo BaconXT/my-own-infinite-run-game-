@@ -1,3 +1,7 @@
+//historia:
+//Alex foi caminhar e sentiu que ainda tinha energia para correr e fazer exercicios mais nao se lembra como fazer
+//voce pode ajudar Alex?
+
 var path, pathImg;
 var runner,runnerImg;
 var swordImg;
@@ -44,11 +48,14 @@ function draw() {
         if (swordG.isTouching(runner)) {
             gameState === END;
             swordG.destroyEach();
-            swordG.setVelocityX = 0;
+            swordG.setVelocityXEach = 0;
+            
             path.velocityX = 0;
             runner.destroy();
             console.log('Voce perdeu! Aperte F5 para atualizar a pagina  e recomeçar')         
-            
+            textSize(20);
+            fill(255);
+            text("Voce Perdeu! Aperte F5 para atualizar a pagina para recomeçar o jogo", 600,200);
         }
           
          drawSprites();
