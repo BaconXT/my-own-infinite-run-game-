@@ -44,22 +44,24 @@ function draw() {
         }
         createSword();   
         runner.display();
-        
+        drawSprites();
         if (swordG.isTouching(runner)) {
-            gameState === END;
+            gameState=END;
             swordG.destroyEach();
-            swordG.setVelocityXEach = 0;
-            
+            swordG.setVelocityX = 0;
+            swordG.setVelocityXEach(0);
             path.velocityX = 0;
             runner.destroy();
-            console.log('Voce perdeu! Aperte F5 para atualizar a pagina  e recomeçar')         
-            textSize(20);
-            fill(255);
-            text("Voce Perdeu! Aperte F5 para atualizar a pagina para recomeçar o jogo", 600,200);
+            
+            textSize(50);
+            fill(255, 0, 0);
+            text("Voce perdeu!, Aperte F5 para recomeçar o jogo", 112.5,300);          
+            
         }
-          
-         drawSprites();
-    }
+        
+             
+         
+        }
 
 }
 
